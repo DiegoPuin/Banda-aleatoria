@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Banda Aleatoria</title>
+	<link rel="stylesheet" type="text/css" href=".dis.css">
+	<script type="text/javascript">
+
+		nombres = new Array('nora', 'nelly', 'jose','Cui', 'Kumi', 'Sebastian', 'pepe');
+
+		instrumentos = new Array('guitarra', 'bajo', 'lira','flauta', 'bateria', 'saxofon', 'trompeta');
+
+		var  lista = Array(Math.floor((Math.random() * 6) + 1));
+
+		var cantante = new Object();
+
+		/* function Capturar(){
+			numero = Math.floor((Math.random() * 100) + 1);
+			var form = document.getElementById("numeroArtistas");
+			form.innerHTML = "Numero Artistas " + numero;
+		}
+		*/
+
+		function CrearCantante(){
+			 var cantante = new Object();		
+		}
+
+
+		function Asignar(){
+
+			 for(i=0; i<lista.length; i++){
+			 	CrearCantante();
+				nombrealeatorio = Math.floor((Math.random() * 7) + 0);
+				instrumentoaleatorio = Math.floor((Math.random() * 7) + 0);
+				lista[i]=cantante = {nombre: nombres[nombrealeatorio] , instrumento: instrumentos[instrumentoaleatorio]};
+
+			}
+
+			traerInfo();
+
+		}
+		console.log(lista);
+
+
+		function traerInfo (){
+			var cantantePivote = CrearCantante();
+			var resultado = "";
+			for (i=0; i<lista.length; i++) {
+				cantantePivote = lista[i];
+				resultado += i+1 + "  " + cantantePivote.nombre + " tocara " + cantantePivote.instrumento +"\n"+"<br>" ;
+
+			}
+			
+			var form = document.getElementById("arreglo");
+			form.innerHTML = resultado;
+
+			console.log(resultado);
+
+		}
+
+
+		function mostrar_imagen(id) {
+		   img = document.getElementById(id);
+		   img.innerHTML = '<img src= "afinar.gif" />';
+		}
+
+		function ocultar_imagen(id) {
+		    img = document.getElementById(id);
+		    img.innerHTML = '';
+		}
+
+		function mostrar_imagen2(id) {
+		   img = document.getElementById(id);
+		   img.innerHTML = '<img src= "tocar.gif" />';
+		}
+
+		function ocultar_imagen2(id) {
+		    img = document.getElementById(id);
+		    img.innerHTML = '';
+		}
+
+</script>	
+		
+	</script>
+
+</head>
+<body>
+		<h1> Banda aleatoria </h1><br>
+		
+		Generar toque ! <input type="button" onclick="Asignar();"value = "Toque"><br>
+		<div id="numeroArtistas"></div>
+		<div id="arreglo"></div>
+		<input type="button" value="Afinar" onClick =mostrar_imagen('imagen'); />
+		<input type="button" value="No afinar mas" onClick ="ocultar_imagen('imagen')" />
+		<br />
+		<div id="imagen"></div>
+		<input type="button" value="tocar" onClick =mostrar_imagen2('imagen'); />
+		<input type="button" value="No tocar mas" onClick ="ocultar_imagen2('imagen')" />
+		<br />
+		<div id="imagen"></div>
+		<h2>Sebastian Pineda 20162020060</h2>
+		<h2>Diego Puin 20162020093</h2>
+
+</body>
+</html>
+
+<!-- datos <input type="text" id="Dato"><br>
